@@ -226,3 +226,43 @@ date: Tue, 24 Nov 2026 11:21:38 GMT
 content-type: text/html; charset=utf-8
 
 ```
+## Ders 6
+- Bilgisayarın ip ve subnetMaskı
+    - netmask 16 lık sistemde gelir. FF-> 255 e karşılık gelir. 
+```bash
+ifconfig en0 | grep "inet "
+ipconfig getifaddr en0
+ipconfig getoption en0 subnet_mask
+```
+```bash
+inet 192.168.1.178 netmask 0xffffff00 broadcast 192.168.1.255
+192.168.1.178
+255.255.255.0
+```
+---
+---
+
+- Terminalde ikilik dönüşümü 
+```bash
+echo "obase=2; 192" | bc
+echo "obase=2; 168" | bc
+echo "ibase=2; 11000000" | bc
+```
+```bash
+11000000
+10101000
+192
+```
+---
+---
+-  Özel ve genel IP farkı
+```bash
+ipconfig getifaddr en0
+curl -s https://api.ipify.org; echo
+```
+```bash
+192.168.1.20
+198.51.100.7
+```
+---
+---
